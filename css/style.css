@@ -39,7 +39,9 @@
     color: #3dc4c4;
 }
 
-
+#game-board {
+    background-color: rgba(163, 235, 235, 0)
+}
 
 .game-overlay.visible {
 
