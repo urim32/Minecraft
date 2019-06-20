@@ -8,6 +8,7 @@ $(".btn").click(function(e) {
     landingPage.removeClass("visible");
 
     let cell = $("<div/>");
+    let block = $("<div/>");
     // for (let i = 0; i < ROWS; i++) {
     //     for (let j = 0; i < COLS; j++) {
     //         cell = $("<div/>");
@@ -15,8 +16,12 @@ $(".btn").click(function(e) {
     //     }
     // }
     let iter = ROWS * COLS;
-    for (let i = 0; i < iter; i++) {
-        cell = $("<div/>").addClass("grid-item").addClass("sky").addClass("cell");
-        cell.appendTo($("#game-board"));
+    for (let i = 0; i < ROWS; i++) {
+        block = $("<div/>").css("display", "block").addClass("block");
+        block.appendTo($("#game-board"));
+        for (let j = 0; j < COLS; j++) {
+            cell = $("<div/>").addClass("sky").addClass("cell");
+            cell.appendTo($(".block"));
+        }
     }
 });

@@ -32,14 +32,20 @@
 #game-board {
     flex-grow: 3;
     background-color: rgba(22, 178, 189, 0);
-    height: 100vh;
+    height: 900px;
+    width: 900px;
+    margin: 0;
+}
+
+.block {
+    height: 30px;
 }
 
 .cell {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     display: inline-block;
-    margin: -6px;
+    margin: 0;
 }
 
 .sky {
