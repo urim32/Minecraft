@@ -19,6 +19,33 @@
     font-size: 24px;
 }
 
+#game-container {
+    display: flex;
+    flex-direction: row;
+}
+
+#game-tools {
+    flex-grow: 1;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+#game-board {
+    flex-grow: 3;
+    background-color: rgba(22, 178, 189, 0);
+    height: 100vh;
+}
+
+.cell {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin: -6px;
+}
+
+.sky {
+    background-color: #9ee9e9;
+}
+
 .btn:hover {
     cursor: pointer;
     box-shadow: 0 0.4rem 1.4rem 0 rgba(35, 160, 62, 0.5);
@@ -39,12 +66,7 @@
     color: #3dc4c4;
 }
 
-#game-board {
-    background-color: rgba(163, 235, 235, 0)
-}
-
 .game-overlay.visible {
-
     background: url('../img/background.jpg')no-repeat center center/cover;
     height: 100vh;
     display: flex;

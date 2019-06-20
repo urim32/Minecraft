@@ -1,5 +1,5 @@
-const COLS = 10;
-const ROWS = 10;
+const COLS = 20;
+const ROWS = 20;
 
 $(".btn").click(function(e) {
     let game = new Game(ROWS, COLS);
@@ -8,9 +8,15 @@ $(".btn").click(function(e) {
     landingPage.removeClass("visible");
 
     let cell = $("<div/>");
-    for (let i = 0; i < ROWS; i++) {
-        for (let j = 0; i < COLS; j++) {
-            $("#game-board").append(cell);
-        }
+    // for (let i = 0; i < ROWS; i++) {
+    //     for (let j = 0; i < COLS; j++) {
+    //         cell = $("<div/>");
+    //         cell.appendTo($("#game-board"));
+    //     }
+    // }
+    let iter = ROWS * COLS;
+    for (let i = 0; i < iter; i++) {
+        cell = $("<div/>").addClass("grid-item").addClass("sky").addClass("cell");
+        cell.appendTo($("#game-board"));
     }
 });
