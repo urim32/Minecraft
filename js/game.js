@@ -1,4 +1,4 @@
-class Game extends Wrold {
+class Game extends World {
     constructor(rows, cols) {
         super(rows, cols);
         this.currentTool = null;

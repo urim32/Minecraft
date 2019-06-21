@@ -20,25 +20,25 @@
 }
 
 #game-container {
-    display: flex;
-    flex-direction: row;
+    background-color: rgb(230, 255, 255);
 }
 
 #game-tools {
-    flex-grow: 1;
     background-color: rgba(0, 0, 0, 0.9);
+    height: 100vh;
 }
 
 #game-board {
-    flex-grow: 3;
     background-color: rgba(22, 178, 189, 0);
-    height: 900px;
+    height: 600px;
     width: 900px;
     margin: 0;
 }
 
 .block {
     height: 30px;
+    width: 100%;
+    margin: 0;
 }
 
 .cell {
