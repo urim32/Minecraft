@@ -24,8 +24,28 @@
 }
 
 #game-tools {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: rgba(0, 0, 0, 0.9);
     height: 100vh;
+}
+
+#game-tools > div {
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 800px) {
+    #game-tools {
+        flex-direction: row;
+        height: 200px;
+    }
+
+    .cell {
+        width: 10px;
+        height: 10px;
+    }
 }
 
 #game-board {
@@ -53,33 +73,56 @@
     background-color: #9ee9e9;
 }
 
+.clouds, .grass, .ground, .gravel, .oak, .leaves, .shoval, .axe, .pickaxe {
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+
 .clouds {
     background-color:rgb(230, 255, 255);
 }
 
 .grass {
     background-image: url('../img/Minecraft-Grass_3782587.jpg');
-    background-size: 100% 100%;
 }
 
 .ground {
     background-image: url('../img/pack_3530346_thumb.jpg');
-    background-size: 100% 100%;   
 }
 
 .gravel {
     background-image: url('../img/gravel.jpg');
-    background-size: 100% 100%;   
 }
 
 .oak {
     background-image: url('../img/oak.jpg');
-    background-size: 100% 100%;   
 }
 
 .leaves {
     background-image: url('../img/leaves.jpg');
-    background-size: 100% 100%;
+}
+
+.shoval, .axe, .pickaxe {
+    width: 100px;
+    height: 100px; 
+}
+
+.axe {
+    background-image: url('../img/axe.png');   
+}
+
+.shoval {
+    background-image: url('../img/shoval.jpg');
+}
+
+.pickaxe {
+    background-image: url('../img/pickaxe.png');   
+}
+
+.selectedItem {
+    width: 50px;
+    height: 50px;
+    border: 1px solid white;
 }
 
 .btn:hover {

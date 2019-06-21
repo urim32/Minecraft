@@ -1,5 +1,7 @@
 const COLS = 30;
 const ROWS = 20;
+let cloudPos = 0;
+let treePos = 0;
 let game = new Game(ROWS, COLS);
 
 $(".btn").click(function(e) {   
