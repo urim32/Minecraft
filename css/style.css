@@ -53,8 +53,32 @@
     background-color: #9ee9e9;
 }
 
+.clouds {
+    background-color:rgb(230, 255, 255);
+}
+
 .grass {
     background-image: url('../img/Minecraft-Grass_3782587.jpg');
+    background-size: 100% 100%;
+}
+
+.ground {
+    background-image: url('../img/pack_3530346_thumb.jpg');
+    background-size: 100% 100%;   
+}
+
+.gravel {
+    background-image: url('../img/gravel.jpg');
+    background-size: 100% 100%;   
+}
+
+.oak {
+    background-image: url('../img/oak.jpg');
+    background-size: 100% 100%;   
+}
+
+.leaves {
+    background-image: url('../img/leaves.jpg');
     background-size: 100% 100%;
 }
 

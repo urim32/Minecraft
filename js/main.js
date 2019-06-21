@@ -20,7 +20,56 @@ $(".btn").click(function(e) {
         }
     }
 
+    //Setting grass
     for (let i = 0; i < COLS; i++) {
-        $(`*[data-pos="${[16, world[16][i].col]}"]`).addClass("grass");
+        $(`*[data-pos="${[12, i]}"]`).addClass("grass");
     }
+
+    //Setting ground
+    for (let i = 13; i < ROWS; i++) {
+        for (let j=0; j < COLS; j++) {
+            $(`*[data-pos="${[i, j]}"]`).addClass("ground");
+        }
+    }
+
+    for (let i = 4; i < 7; i++) {
+        $(`*[data-pos="${[11,i]}"]`).addClass("leaves");
+    }
+
+    $(`*[data-pos="${[10,5]}"]`).addClass("leaves");
+
+    for (let j = 8; j < 17; j++) {
+        $(`*[data-pos="${[4,j]}"]`).addClass("clouds");
+    }
+
+    for (let i = 9; i < 17; i++) {
+        if (i == 14) {
+            continue;
+        }
+        $(`*[data-pos="${[3,i]}"]`).addClass("clouds");
+    }
+
+    for (let i = 13; i < 15; i++) {
+        $(`*[data-pos="${[5,i]}"]`).addClass("clouds");
+    }
+
+    $(`*[data-pos="${[2,11]}"]`).addClass("clouds");
+
+    $(`*[data-pos="${[11,29]}"]`).addClass("gravel");
+
+    for (let i = 22; i < 24; i++) {
+        $(`*[data-pos="${[11,i]}"]`).addClass("gravel");
+    }
+
+    //tree
+    for (let i = 11; i > 8; i--) {
+        $(`*[data-pos="${[i,26]}"]`).addClass("oak");   
+    }
+
+    for (let i = 6; i < 9; i++) {
+        for (let j = 25; j < 28; j++) {
+            $(`*[data-pos="${[i,j]}"]`).addClass("leaves");       
+        }
+    }
+
 });
