@@ -45,11 +45,17 @@
     width: 30px;
     height: 30px;
     display: inline-block;
+    border: 1px solid blue;
     margin: 0;
 }
 
 .sky {
     background-color: #9ee9e9;
+}
+
+.grass {
+    background-image: url('../img/Minecraft-Grass_3782587.jpg');
+    background-size: 100% 100%;
 }
 
 .btn:hover {
