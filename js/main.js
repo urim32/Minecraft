@@ -36,16 +36,9 @@ $(".tool-item").click(function(e) {
         let point = target.getAttribute("data-pos").split(",");
         let x = point[0];
         let y = point[1];
-        let currentClass = target.getAttribute("class");
-        currentClasses = currentClass.split(" ");
-        let currentTile = "";
-        for (let i = 0; i < currentClasses.length; i++) {
-            if (currentClasses[i] == "grass" || currentClasses[i] == "gravel" || currentClasses[i] == "leaves" ||
-                currentClasses[i] == "oak") {
-                    currentTile = currentClasses[i];
-                }
-        }
-
+        let currentTile = game.world[x][y]["gp"];
+        let currentClass = currentTile;
+        
         game.removeTile(x,y);
         $(this).removeClass(currentClass);
         $(this).addClass("cell");
@@ -61,6 +54,17 @@ $(".tool-item").click(function(e) {
 
 $("#selectedItem").click(function(e) {
     $(".cell").click(function(event) {
-        
+        let tile = event.target;
+        let point = tile.getAttribute("data-pos").split(",");
+        let x = point[0];
+        let y = point[1];
+        let inventory = e.target.getAttribute("class");
+
+        if (game.world[x][y]["gp"] === "sky") {
+            game.addInventory(x,y,inventory);
+            $(this).removeClass("sky");
+            $(this).addClass(inventory);
+            e.target.classList.remove(inventory);
+        }
     })
 })
