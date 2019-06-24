@@ -1,7 +1,7 @@
 class Cell {
-    constructor(row, col) {
+    constructor(row, col, gp) {
         this.row = row;
         this.col = col;
-        this.gp = null;   //css class ("ground"/"bush"/"leaf"/"clouds"/"tree")
+        this.gp = gp;   //css class ("ground"/"bush"/"leaf"/"clouds"/"tree")
     }
 }
