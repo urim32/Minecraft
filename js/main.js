@@ -27,8 +27,8 @@ $(".btn").click(function(e) {
     }
 });
 
-$(".tool-item").click(function(e) {
-    let tool = $(this).attr("id");
+$(".tool-item img").click(function(e) {
+    let tool = $(this).attr("class");
     game.changeTool(tool);
 
     $(".cell").click(function(event) {
@@ -37,17 +37,25 @@ $(".tool-item").click(function(e) {
         let x = point[0];
         let y = point[1];
         let currentTile = game.world[x][y]["gp"];
-        let currentClass = currentTile;
+        // let currentClass = currentTile;
         
-        game.removeTile(x,y);
-        $(this).removeClass(currentClass);
-        $(this).addClass("cell");
-        $(this).addClass(game.world[x][y]["gp"]);
-        if (game.rules[game.currentTool].includes(currentTile)) {
+        let toolMatch = game.checkToolMatch(game.currentTool, currentTile);
+        if (toolMatch) {
+            game.removeTile(x,y);
+            $(this).removeClass(currentTile);
+            $(this).addClass(game.world[x][y]["gp"]);
             $("selectedItem").attr("class", null);
-            $("#selectedItem").attr("class", currentClass);
-        }
-       
+            $("#selectedItem").attr("class", currentTile);
+        } else if (currentTile === "sky") {
+            console.log("no red bg");
+        } else {
+            tool = $(`.${game.currentTool}`);
+    
+            tool.toggleClass("red");
+            setTimeout(function() {
+                tool.toggleClass("red")
+            }, 500);
+        }       
     });
 
 })

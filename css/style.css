@@ -133,6 +133,18 @@
     background-image: url('../img/pickaxe-black.png');
 } 
 
+.axe.red {
+    background-image: url('../img/axe-red.png');
+}
+
+.shoval.red {
+    background-image: url('../img/shoval-red.png');
+}
+
+.pickaxe.red {
+    background-image: url('../img/pickaxe-red.png');
+}
+
 .pickaxe:hover {
 background-image: url('../img/pickaxe-blue.png');
 }

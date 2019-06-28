@@ -14,16 +14,19 @@ class Game extends World {
         this.currentTool = tool;
     }
 
-    removeTile(x,y) {
-        if (this.currentTool === "pickaxe" && this.world[x][y]["gp"] === "gravel") {
-            this.world[x][y]["gp"] = "sky";
-        } else if (this.currentTool === "shoval" && this.world[x][y]["gp"] === "grass" ||
-                   this.world[x][y]["gp"] === "ground") {
-            this.world[x][y]["gp"] = "sky";
-        } else if (this.currentTool === "axe" && (this.world[x][y]["gp"] === "oak" || 
-                   this.world[x][y]["gp"] === "leaves")) {
-            this.world[x][y]["gp"] = "sky";
+    checkToolMatch(tool, tile) {
+        if (this.rules[tool].includes(tile)) {
+            return true;
+        } else {
+            return false;
         }
+    }
+
+    removeTile(x,y) {
+        // let tool = this.rules[this.currentTool];
+
+        // if (tool.includes("gravel"))
+        this.world[x][y]["gp"] = "sky";
     }
 
     addInventory(x,y,gp) {
