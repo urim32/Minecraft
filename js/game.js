@@ -23,9 +23,6 @@ class Game extends World {
     }
 
     removeTile(x,y) {
-        // let tool = this.rules[this.currentTool];
-
-        // if (tool.includes("gravel"))
         this.world[x][y]["gp"] = "sky";
     }
 

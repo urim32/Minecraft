@@ -12,16 +12,53 @@
 <body>
     <div class="game-overlay visible">
         <a href="#" class="btn">Start Game</a>
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">
+            Help
+        </button>
     </div>
     <div id="game-container" class="row">
         <div id="game-board" class="col-md-9 col-sm-12"></div>
         <div id="game-tools" class="col-md-3 col-sm-12">
-            <div class="tool-item" id="pickaxe"><a href="#"><img class="pickaxe"></a><div>PICKAXE</div></div>
-            <div class="tool-item" id="shoval"><a href="#"><img class="shoval"></a><div>SHOVAL</div></div>
-            <div class="tool-item" id="axe"><a href="#"><img class="axe"></a><div>AXE</div></div>
-            <div id="selectedItem"><a href="#"></a></div>
+            <div class="tool-item" id="pickaxe"><img class="pickaxe"><div>PICKAXE</div></div>
+            <div class="tool-item" id="shoval"><img class="shoval"><div>SHOVAL</div></div>
+            <div class="tool-item" id="axe"><img class="axe"><div>AXE</div></div>
+            <div id="selectedItem"></div>
         </div>       
     </div>
+
+
+      <!-- Modal -->
+      <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+        
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                <button type="button" class="close" data-dismiss="modal">&times;</button><br>
+                </div>
+                <div class="modal-body">
+                <h4 class="modal-title">Instructions</h4>
+                <p>Welcome to Minecraft 2D Regressed! In this 2D version you can build your own world with two dimensional tiles.</p>
+                <ol>
+                    <li>The user will have 3 types of tools:
+                        <ol>
+                            <li>Axe - for cutting trees</li>
+                            <li>Pickaxe - for mining rocks</li>
+                            <li>Shovel - for digging dirt</li>
+                        </ol>
+                    </li>
+                    <li>Clicking on a tool followed by clicking on a tile in the world will remove the tile. (If it is of the correct
+                            type according to #1) and add it to the inventory</li>
+                    <li>User can click on the tile in the inventory and place it back in the world (just the last one)</li>
+                </ol>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        
+            </div>
+        </div>
     
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

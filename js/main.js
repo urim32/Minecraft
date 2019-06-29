@@ -6,7 +6,7 @@ let cloudPos = 0;
 let treePos = 0;
 let game = new Game(ROWS, COLS);
 
-$(".btn").click(function(e) {   
+$(".btn:not(.btn-info)").click(function(e) {   
     let landingPage = $(".game-overlay");
     landingPage.removeClass("visible");
 
@@ -36,10 +36,9 @@ $(".tool-item img").click(function(e) {
         let point = target.getAttribute("data-pos").split(",");
         let x = point[0];
         let y = point[1];
-        let currentTile = game.world[x][y]["gp"];
-        // let currentClass = currentTile;
-        
+        let currentTile = game.world[x][y]["gp"];        
         let toolMatch = game.checkToolMatch(game.currentTool, currentTile);
+
         if (toolMatch) {
             game.removeTile(x,y);
             $(this).removeClass(currentTile);
@@ -51,9 +50,9 @@ $(".tool-item img").click(function(e) {
         } else {
             tool = $(`.${game.currentTool}`);
     
-            tool.toggleClass("red");
+            tool.addClass("red");
             setTimeout(function() {
-                tool.toggleClass("red")
+                tool.removeClass("red")
             }, 500);
         }       
     });
@@ -68,7 +67,7 @@ $("#selectedItem").click(function(e) {
         let y = point[1];
         let inventory = e.target.getAttribute("class");
 
-        if (game.world[x][y]["gp"] === "sky") {
+        if (game.world[x][y]["gp"] === "sky" && inventory) {
             game.addInventory(x,y,inventory);
             $(this).removeClass("sky");
             $(this).addClass(inventory);
