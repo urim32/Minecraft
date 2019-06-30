@@ -6,7 +6,7 @@ let cloudPos = 0;
 let treePos = 0;
 let game = new Game(ROWS, COLS);
 
-$(".btn:not(.btn-info)").click(function(e) {   
+$(".btn:not(.btn-info):not(.btn-default)").click(function(e) {   
     let landingPage = $(".game-overlay");
     landingPage.removeClass("visible");
 
