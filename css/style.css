@@ -35,6 +35,7 @@
 
 #game-container {
     background-color: rgb(230, 255, 255);
+    width: calc(100vw + 2px);
 }
 
 #game-tools {
@@ -57,7 +58,7 @@
     color: white;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
     #game-tools {
         flex-direction: row;
         height: 200px;
@@ -69,8 +70,8 @@
     }
 
     #game-board {
-        height: 200px;
-        width: 300px;
+        height: 210px;
+        width: 310px;
     }
 }
 
